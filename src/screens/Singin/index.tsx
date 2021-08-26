@@ -3,7 +3,6 @@ import {
     Text,
     View,
     Image,
-    StatusBar,
     ImageBackground,
 } from 'react-native';
 import { styles } from './styles';
@@ -16,9 +15,7 @@ import ButtonIcon from '../../components/ButtonIcon';
 const Singin: React.FC = () => {
     return (
         <View style={styles.container}>
-            <StatusBar
-                barStyle='light-content'
-            />
+            
             <Image
                 source={IllustrationImg}
                 style={styles.image}
@@ -26,7 +23,7 @@ const Singin: React.FC = () => {
             />
             <View style={styles.content}>
                 <Text style={styles.title}>
-                    Organize{'\n'}suas jogatinas{'\n'}facilmente
+                    Conecte-se{'\n'}e organize suas{'\n'}jogatinas
                 </Text>
                 <Text style={styles.subtitle}>
                     Crie grupos para jogar seus games{'\n'}favoritos com seus amigos

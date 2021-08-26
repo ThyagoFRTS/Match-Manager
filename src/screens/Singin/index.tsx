@@ -5,14 +5,24 @@ import {
     Image,
     ImageBackground,
 } from 'react-native';
-import { styles } from './styles';
 
+import ButtonIcon from '../../components/ButtonIcon';
+import { AuthParams } from '../../global/types';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+import { styles } from './styles';
 import IllustrationImg from '../../assets/GwenFixed.png'
 //Original image in: https://www.zerochan.net/3300990
-import ButtonIcon from '../../components/ButtonIcon';
+
+type Props = NativeStackScreenProps<AuthParams, 'Singin'>;
 
 
-const Singin: React.FC = () => {
+const Singin : React.FC<Props>  = ({navigation}) => {
+
+    function handleSingin(){
+        navigation.navigate('Home');
+    }
+
     return (
         <View style={styles.container}>
             
@@ -28,7 +38,12 @@ const Singin: React.FC = () => {
                 <Text style={styles.subtitle}>
                     Crie grupos para jogar seus games{'\n'}favoritos com seus amigos
                 </Text>
-                <ButtonIcon title={"Entrar com o Discord"}/>
+                <ButtonIcon
+                    title={"Entrar com o Discord"}
+                    activeOpacity={0.7}
+                    onPress={handleSingin}    
+                
+                />
             </View>
         </View>
     );

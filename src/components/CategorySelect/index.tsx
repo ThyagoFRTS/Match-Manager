@@ -18,11 +18,8 @@ const CategorySelect: React.FC<Props> = ({ categorySelected, setCategory }) => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{ paddingRight: 40 }}
         >
-            
             {
-                
                 categories.map((category) => {
-                    console.log(category.id);
                     return (
                         <Category
                             key={category.id}

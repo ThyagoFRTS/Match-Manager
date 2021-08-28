@@ -3,84 +3,92 @@ import { FlatList, View, Text } from 'react-native';
 
 import CategorySelect from '../../components/CategorySelect';
 import Appointments from '../../components/Appointments';
+import ListDivider from '../../components/ListDivider';
 import ListHeader from '../../components/ListHeader';
 import ButtonAdd from '../../components/ButtonAdd';
 import Profile from '../../components/Profile';
-import ListDivider from '../../components/ListDivider';
-
 import { styles } from './styles';
-// import { Container } from './styles';
 
+import { AuthParams } from '../../global/types';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const Home = () => {
-  const [category, setCategory] = useState('');
+type Props = NativeStackScreenProps<AuthParams, 'AppointmentDetails'>;
 
-  const appointments = [
-    {
-      id: '1',
-      guild: {
-        id: '1',
-        name: 'Lendários',
-        icon: '',
-        owner: true,
-      },
-      category: '1',
-      date: '22/06 as 20h40',
-      description: 'Akali sup de cometa é lei, nida top é o dream e kat sup é crime',
+const Home: React.FC<Props> = ({navigation}) => {
+    const [category, setCategory] = useState('');
+    const appointments = [
+        {
+            id: '1',
+            guild: {
+                id: '1',
+                name: 'Lendários',
+                icon: '',
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20h40',
+            description: 'Akali sup de cometa é lei, nida top é o dream e kat sup é crime',
 
-    },
-    {
-      id: '2',
-      guild: {
-        id: '1',
-        name: 'Lendários',
-        icon: '',
-        owner: true,
-      },
-      category: '1',
-      date: '22/06 as 20h40',
-      description: 'Akali sup de cometa é lei, nida top é o dream e kat sup é crime',
+        },
+        {
+            id: '2',
+            guild: {
+                id: '1',
+                name: 'Lendários',
+                icon: '',
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20h40',
+            description: 'Akali sup de cometa é lei, nida top é o dream e kat sup é crime',
 
+        }
+    ]
+
+    function handleCategorySelected(categoryId: string) {
+        categoryId === category ? setCategory('') : setCategory(categoryId)
     }
-  ]
 
-  function handleCategorySelected(categoryId: string) {
-    categoryId === category ? setCategory('') : setCategory(categoryId)
-  }
+    function handleAppointmentDetails () {
+        navigation.navigate('AppointmentDetails')
+    }
 
-  return (
-    <View style={styles.container}>
+    return (
+        <View style={styles.container}>
 
-      <View style={styles.header}>
-        <Profile></Profile>
-        <ButtonAdd />
-      </View>
+            <View style={styles.header}>
+                <Profile></Profile>
+                <ButtonAdd />
+            </View>
 
-      <CategorySelect
-        categorySelected={category}
-        setCategory={handleCategorySelected}
-        hasCheckBox={false}
-      />
+            <CategorySelect
+                categorySelected={category}
+                setCategory={handleCategorySelected}
+                hasCheckBox={false}
+            />
 
-      <View style={styles.content}>
-        <ListHeader
-          title='Partidas Agendadas'
-          subtitle='total 6'
-        />
-        <FlatList
-          data={appointments}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <Appointments data={item} />
-          )}
-          ItemSeparatorComponent={() => <ListDivider />}
-          style={styles.matches}
-          showsVerticalScrollIndicator={false}
-        />
+            <View style={styles.content}>
+                <ListHeader
+                    title='Partidas Agendadas'
+                    subtitle='total 6'
+                />
+                <FlatList
+                    data={appointments}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => (
+                        <Appointments
+                            data={item}
+                            onPress={handleAppointmentDetails}
+                        />
+                    )}
+                    ItemSeparatorComponent={() => <ListDivider />}
+                    style={styles.matches}
+                    showsVerticalScrollIndicator={false}
+                />
 
-      </View>
-    </View>
-  );
+            </View>
+        </View>
+    );
 }
 
 export default Home;

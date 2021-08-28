@@ -13,6 +13,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { styles } from './styles';
 import IllustrationImg from '../../assets/GwenFixed.png'
+import { useNavigation } from '@react-navigation/native';
 //Original image in: https://www.zerochan.net/3300990
 
 type Props = NativeStackScreenProps<AuthParams, 'Singin'>;
@@ -20,7 +21,7 @@ type Props = NativeStackScreenProps<AuthParams, 'Singin'>;
 
 
 const Singin : React.FC<Props>  = ({navigation}) => {
-
+    const nav = useNavigation();
     function handleSingin(){
         navigation.navigate('Home');
     }

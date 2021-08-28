@@ -6,14 +6,14 @@ import {
     Text,
     Image,
 } from 'react-native';
-import { styles } from './styles';
 import DiscordImg from '../../assets/discord.png';
+import { styles } from './styles';
 
 type Props = TouchableOpacityProps & {
-    title : string;
+    title: string;
 }
 
-const ButtonIcon = ({title, ...rest} : Props) => {
+const ButtonIcon = ({ title, ...rest }: Props) => {
     return (
         <TouchableOpacity style={styles.container} {...rest}>
             <View style={styles.iconWrapper}>

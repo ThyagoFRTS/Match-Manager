@@ -5,28 +5,25 @@ import {
     TouchableOpacity,
     TouchableOpacityProps
 } from 'react-native';
-import { styles } from './styles';
-import { AppointmentProps } from '../../global/types'
+import CalendarSvg from '../../assets/calendar.svg'
 import GuildIcon from '../GuildIcon'
 import PlayerSvg from '../../assets/player.svg'
-import CalendarSvg from '../../assets/calendar.svg'
+import { AppointmentProps } from '../../global/types'
 import { categories } from '../../utils/categories';
 import { theme } from '../../global/styles/theme';
-// import { Container } from './styles';
+import { styles } from './styles';
+
+
 type Props = TouchableOpacityProps & {
     data: AppointmentProps;
 }
 
-
 const Appointments: React.FC<Props> = ({ data, ...rest }) => {
     const [category] = categories.filter(item => item.id === data.category);
+    const {primary, on} = theme.colors;
     const { owner } = data.guild;
-
     return (
-        <TouchableOpacity
-
-            {...rest}
-        >
+        <TouchableOpacity {...rest}>
             <View style={styles.container}>
                 <GuildIcon />
                 <View style={styles.content}>
@@ -48,26 +45,23 @@ const Appointments: React.FC<Props> = ({ data, ...rest }) => {
 
                         <View style={styles.playersInfo}>
                             <PlayerSvg
-                                fill={owner ? theme.colors.primary : theme.colors.on}
+                                fill={owner ? primary : on}
                             />
 
                             <Text style={
                                 [
                                     styles.player,
-                                    { color: owner ? theme.colors.primary : theme.colors.on }
+                                    { color: owner ? primary : on }
                                 ]}
                             >
                                 {owner ? 'Anfitrião' : 'Visitante'}
                             </Text>
                         </View>
                     </View>
-
                 </View>
             </View>
-
         </TouchableOpacity>
     );
-
 }
 
 export default Appointments;

@@ -4,11 +4,11 @@ import { View } from 'react-native';
 import { styles } from './styles';
 
 const ListDivider: React.FC = () => {
-  return (
-      <View style={styles.container}>
+    return (
+        <View style={styles.container}>
 
-      </View>
-  );
+        </View>
+    );
 }
 
 export default ListDivider;

@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
         marginVertical: 31,
         marginRight: 24,
         alignSelf: 'flex-end',
+        opacity: 0.4,
         
     },
     

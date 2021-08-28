@@ -8,6 +8,7 @@ export const theme = {
         overlay: 'rgba(0,0,0,0.7)',
         heading: '#DDE3F0',
         line: '#991F36',
+        lineStrong: '#220303',
         highlight: '#ABB1CC',
         on: '#32BD50',
 

@@ -1,9 +1,9 @@
 import React from 'react';
+import { categories } from '../../utils/categories';
 import { ScrollView } from 'react-native';
 import { styles } from './styles';
-import { categories } from '../../utils/categories';
 import Category from '../Category';
-// import { Container } from './styles';
+
 
 type Props = {
     categorySelected: string;
@@ -25,7 +25,7 @@ const CategorySelect: React.FC<Props> = ({ categorySelected, setCategory, hasChe
                         <Category
                             key={category.id}
                             title={category.title}
-                            Icon={category.icon}
+                            icon={category.icon}
                             checked={category.id == categorySelected}
                             onPress={() => {setCategory(category.id)}}
                             hasCheckBox={hasCheckBox}

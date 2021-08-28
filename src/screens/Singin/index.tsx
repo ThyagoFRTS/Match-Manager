@@ -10,11 +10,13 @@ import ButtonIcon from '../../components/ButtonIcon';
 import { AuthParams } from '../../global/types';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
+
 import { styles } from './styles';
 import IllustrationImg from '../../assets/GwenFixed.png'
 //Original image in: https://www.zerochan.net/3300990
 
 type Props = NativeStackScreenProps<AuthParams, 'Singin'>;
+
 
 
 const Singin : React.FC<Props>  = ({navigation}) => {
@@ -44,6 +46,7 @@ const Singin : React.FC<Props>  = ({navigation}) => {
                     onPress={handleSingin}    
                 
                 />
+                
             </View>
         </View>
     );

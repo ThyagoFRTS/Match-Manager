@@ -2,6 +2,8 @@ export const theme = {
     colors: {
         primary: '#E51C44',
         background: '#000000',
+        background10: '#141414',
+        secondary: '#FEFEFE',
         
         overlay: 'rgba(0,0,0,0.7)',
         heading: '#DDE3F0',

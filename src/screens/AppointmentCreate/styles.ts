@@ -4,6 +4,10 @@ import { theme } from "../../global/styles/theme";
 
 
 export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
     banner: {
         width: '100%',
         height: 234,
@@ -16,24 +20,62 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 24,
         marginBottom: 24,
     },
-    title: {
+    label: {
         fontFamily: theme.fonts.title700,
-        fontSize: 28,
+        fontSize: 18,
         color: theme.colors.heading,
     },
-    subtitle: {
-        fontFamily: theme.fonts.text400,
+    form: {
+        paddingHorizontal: 24,
+        marginTop: 32,
+    },
+    select: {
+        width: '100%',
+        flexDirection: "row",
+        height: 68,
+        borderColor: theme.colors.primary,
+        borderWidth: 1,
+        borderRadius: 8,
+        alignItems: "center",
+        paddingRight: 25,
+        overflow: "hidden",
+    },
+    selectBody: {
+        flex: 1,
+        alignItems: "center",
+    },
+    image: {
+        width: 64,
+        height: 68,
+        backgroundColor: theme.colors.background,
+        borderColor: theme.colors.primary,
+        borderWidth: 1,
+        borderRadius: 8,
+    },
+    field: {
+        width: '100%',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 30,
+    },
+    column: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    divider: {
+        marginRight: 4,
+        fontSize: 15,
+        fontFamily: theme.fonts.text500,
+        color: theme.colors.highlight,
+    },
+    charLimit: {
         fontSize: 13,
-        color: theme.colors.heading,
-    },
-    members: {
-        marginLeft: 24,
-        marginTop: 27,
+        fontFamily: theme.fonts.text400,
+        color: theme.colors.highlight,
     },
     footer: {
-        paddingHorizontal: 24,
-        paddingVertical: 20,
-        marginBottom: getBottomSpace(),
+        marginVertical: 20,
+        marginBottom: 56,
     },
     
 });

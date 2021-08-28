@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-    ImageBackground,
     Text,
     TouchableOpacity,
     View,
-    FlatList,
+    KeyboardAvoidingView,
+    ScrollView,
+    Platform
 } from 'react-native';
-import ListDivider from '../../components/ListDivider';
+
 import Background from '../../components/Background';
-import ListHeader from '../../components/ListHeader';
-import BannerImg from '../../assets/banner.png'
-import Member from '../../components/Member';
+
 import Header from '../../components/Header';
-import { Fontisto } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { styles } from './styles';
 import { theme } from '../../global/styles/theme';
-import ButtonIcon from '../../components/ButtonIcon';
+
+import CategorySelect from '../../components/CategorySelect';
+import GuildIcon from '../../components/GuildIcon';
+import SmallInput from '../../components/SmallInput';
+import TextArea from '../../components/TextArea';
+import Button from '../../components/Button';
 
 const AppointmentCreate: React.FC = () => {
+    const [category, setCategory] = useState('');
     const members = [
         {
             id: '1',
@@ -36,42 +41,91 @@ const AppointmentCreate: React.FC = () => {
     ]
 
     return (
-        <Background>
+
+        <ScrollView style={styles.container}>
+
+
             <Header
-                title="Details"
-                action={
-                    <TouchableOpacity>
-                        <Fontisto name="share" size={24} color={theme.colors.secondary} />
-                    </TouchableOpacity>
-                }
+                title="Create Mach"
+
             />
-            <ImageBackground
-                source={BannerImg}
-                style={styles.banner}
-            >
-                <View style={styles.bannerContent}>
-                    <Text style={styles.title}>
-                        Lendarios
+            <Text style={[styles.label, { marginLeft: 24, marginTop: 36, marginBottom: 18 }]}>
+                Category
+            </Text>
+
+            <CategorySelect
+                hasCheckBox
+                setCategory={setCategory}
+                categorySelected={category}
+            />
+            <View style={styles.form}>
+                <TouchableOpacity>
+                    <View style={styles.select}>
+                        {
+                            /*<View style={styles.image} />*/
+                            <GuildIcon />
+                        }
+                        <View style={styles.selectBody}>
+                            <Text style={styles.label}>
+                                Select an Server
+                            </Text>
+                        </View>
+                        <Feather name="chevron-right" color={theme.colors.heading} size={18} />
+
+                    </View>
+                </TouchableOpacity>
+                <View style={styles.field}>
+                    <View>
+                        <Text style={styles.label}>
+                            Dia e mês
+                        </Text>
+                        <View style={styles.column}>
+                            <SmallInput maxLength={2} />
+                            <Text style={styles.divider}>
+                                /
+                            </Text>
+                            <SmallInput maxLength={2} />
+                        </View>
+                    </View>
+
+                    <View>
+                        <Text style={styles.label}>
+                            Hora e minuto
+                        </Text>
+                        <View style={styles.column}>
+                            <SmallInput maxLength={2} />
+                            <Text style={styles.divider}>
+                                :
+                            </Text>
+                            <SmallInput maxLength={2} />
+                        </View>
+                    </View>
+
+                </View>
+
+                <View style={[styles.field, { marginBottom: 12 }]}>
+                    <Text style={styles.label} >
+                        Descrição
                     </Text>
-                    <Text style={styles.subtitle}>
-                        Olha a akali sup aí, challenger vibes
+                    <Text style={styles.charLimit} >
+                        Max 100 Characters
                     </Text>
                 </View>
-            </ImageBackground>
-            <ListHeader title="Jogadores" subtitle="total 3" />
-            <FlatList
-                data={members}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                    <Member data={item} />
-                )}
-                ItemSeparatorComponent={() => <ListDivider />}
-                style={styles.members}
-            />
-            <View style={styles.footer}>
-                <ButtonIcon title="Join Match" />
+
+                <TextArea
+                    multiline
+                    maxLength={100}
+                    numberOfLines={5}
+                    autoCorrect={false}
+                />
+                <View style={styles.footer}>
+                    <Button title="Agendar" />
+                </View>
+
             </View>
-        </Background>
+
+        </ScrollView>
+
     );
 }
 

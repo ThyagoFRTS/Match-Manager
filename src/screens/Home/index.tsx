@@ -59,6 +59,7 @@ const Home = () => {
       <CategorySelect
         categorySelected={category}
         setCategory={handleCategorySelected}
+        hasCheckBox={false}
       />
 
       <View style={styles.content}>

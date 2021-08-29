@@ -17,7 +17,7 @@ export type MemberProps = {
 export type GuildProps = {
     id: string;
     name: string;
-    icon: string;
+    icon: string | null;
     owner: boolean;
 }
 
@@ -28,3 +28,4 @@ export type AppointmentProps = {
     date: string;
     description: string;
 }
+

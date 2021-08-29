@@ -4,6 +4,8 @@ import {
     View,
     Image,
     ImageBackground,
+    Alert,
+    ActivityIndicator,
 } from 'react-native';
 
 import ButtonIcon from '../../components/ButtonIcon';
@@ -14,21 +16,27 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { styles } from './styles';
 import IllustrationImg from '../../assets/GwenFixed.png'
 import { useNavigation } from '@react-navigation/native';
+import { useAuthContext } from '../../hooks/auth';
+import { theme } from '../../global/styles/theme';
 //Original image in: https://www.zerochan.net/3300990
 
-type Props = NativeStackScreenProps<AuthParams, 'Singin'>;
 
 
+const Singin: React.FC = () => {
+    const { singIn, loading } = useAuthContext();
 
-const Singin : React.FC<Props>  = ({navigation}) => {
-    const nav = useNavigation();
-    function handleSingin(){
-        navigation.navigate('Home');
+    async function handleSingin() {
+        //navigation.navigate('Home');
+        try {
+            await singIn();
+        } catch (error) {
+            Alert.alert(error)
+        }
     }
 
     return (
         <View style={styles.container}>
-            
+
             <Image
                 source={IllustrationImg}
                 style={styles.image}
@@ -41,13 +49,18 @@ const Singin : React.FC<Props>  = ({navigation}) => {
                 <Text style={styles.subtitle}>
                     Crie grupos para jogar seus games{'\n'}favoritos com seus amigos
                 </Text>
-                <ButtonIcon
-                    title={"Entrar com o Discord"}
-                    activeOpacity={0.7}
-                    onPress={handleSingin}    
-                
-                />
-                
+
+                {
+                    loading ?
+                        <ActivityIndicator color={theme.colors.primary} />
+                        :
+                        <ButtonIcon
+                            title={"Entrar com o Discord"}
+                            activeOpacity={0.7}
+                            onPress={handleSingin}
+                        />
+                }
+
             </View>
         </View>
     );

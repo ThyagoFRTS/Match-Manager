@@ -16,6 +16,8 @@ type Props = NativeStackScreenProps<AuthParams, 'AppointmentDetails'>;
 
 const Home: React.FC<Props> = ({ navigation }) => {
     const [category, setCategory] = useState('');
+    
+
     const appointments = [
         {
             id: '1',

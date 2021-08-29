@@ -18,7 +18,7 @@ export const AuthRoutes = () => {
                 }
             }
         >
-            <Screen name="Singin" component={Singin} />
+            
             <Screen name="Home" component={Home} />
             <Screen name="AppointmentDetails" component={AppointmentDetails} />
             <Screen name="AppointmentCreate" component={AppointmentCreate} />

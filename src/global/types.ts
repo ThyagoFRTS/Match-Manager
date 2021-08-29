@@ -2,9 +2,18 @@ import { NavigatorScreenParams } from "@react-navigation/core";
 
 export type AuthParams = {
     Home: undefined,
-    Singin: undefined,
     AppointmentDetails: undefined,
     AppointmentCreate: undefined,
+}
+
+export type UserProps = {
+    id: string;
+    username: string;
+    firstName: string;
+    avatar: string;
+    email: string;
+    token: string;
+
 }
 
 export type MemberProps = {

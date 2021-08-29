@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Mach Manager",
-    "slug": "MachManager",
+    "name": "Match Manager",
+    "slug": "MatchManager",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -39,7 +39,7 @@ const Header: React.FC<Props> = ({ title, action }) => {
                         {action}
                     </View>
                     :
-                    false
+                    <View style={{width: 24}}></View>
             }
         </LinearGradient>
     );

@@ -14,7 +14,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 type Props = NativeStackScreenProps<AuthParams, 'AppointmentDetails'>;
 
-const Home: React.FC<Props> = ({navigation}) => {
+const Home: React.FC<Props> = ({ navigation }) => {
     const [category, setCategory] = useState('');
     const appointments = [
         {
@@ -42,18 +42,31 @@ const Home: React.FC<Props> = ({navigation}) => {
             date: '22/06 as 20h40',
             description: 'Akali sup de cometa é lei, nida top é o dream e kat sup é crime',
 
-        }
+        },
+        {
+            id: '3',
+            guild: {
+                id: '1',
+                name: 'Lendários',
+                icon: '',
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20h40',
+            description: 'Akali sup de cometa é lei, nida top é o dream e kat sup é crime',
+
+        },
     ]
 
     function handleCategorySelected(categoryId: string) {
         categoryId === category ? setCategory('') : setCategory(categoryId)
     }
 
-    function handleAppointmentDetails () {
+    function handleAppointmentDetails() {
         navigation.navigate('AppointmentDetails')
     }
 
-    function handleAppointmentCreate () {
+    function handleAppointmentCreate() {
         navigation.navigate('AppointmentCreate')
     }
 
@@ -62,7 +75,7 @@ const Home: React.FC<Props> = ({navigation}) => {
 
             <View style={styles.header}>
                 <Profile></Profile>
-                <ButtonAdd onPress={handleAppointmentCreate}/>
+                <ButtonAdd onPress={handleAppointmentCreate} />
             </View>
 
             <CategorySelect
@@ -71,26 +84,27 @@ const Home: React.FC<Props> = ({navigation}) => {
                 hasCheckBox={false}
             />
 
-            <View style={styles.content}>
-                <ListHeader
-                    title='Partidas Agendadas'
-                    subtitle='total 6'
-                />
-                <FlatList
-                    data={appointments}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item }) => (
-                        <Appointments
-                            data={item}
-                            onPress={handleAppointmentDetails}
-                        />
-                    )}
-                    ItemSeparatorComponent={() => <ListDivider />}
-                    style={styles.matches}
-                    showsVerticalScrollIndicator={false}
-                />
 
-            </View>
+            <ListHeader
+                title='Partidas Agendadas'
+                subtitle='total 6'
+            />
+
+
+            <FlatList
+                data={appointments}
+                keyExtractor={item => item.id}
+                renderItem={({ item }) => (
+                    <Appointments
+                        data={item}
+                        onPress={handleAppointmentDetails}
+                    />
+                )}
+                contentContainerStyle={{paddingBottom: 69}}
+                ItemSeparatorComponent={() => <ListDivider />}
+                style={styles.matches}
+                showsVerticalScrollIndicator={false}
+            />
         </View>
     );
 }

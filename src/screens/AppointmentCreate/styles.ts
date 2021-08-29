@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
         width: '100%',
         flexDirection: "row",
         height: 68,
-        borderColor: theme.colors.primary,
+        borderColor: theme.colors.line,
         borderWidth: 1,
         borderRadius: 8,
         alignItems: "center",

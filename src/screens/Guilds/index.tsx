@@ -17,7 +17,49 @@ const Guilds: React.FC<Props> = ({handleGuildSelected}) => {
             name: 'Akali Sup',
             icon: 'a',
             owner: true,
-        }
+        },
+        {
+            id: '2',
+            name: 'Nida top',
+            icon: 'a',
+            owner: true,
+        },
+        {
+            id: '3',
+            name: 'Soul',
+            icon: 'a',
+            owner: true,
+        },
+        {
+            id: '4',
+            name: 'Akali Sup',
+            icon: 'a',
+            owner: true,
+        },
+        {
+            id: '5',
+            name: 'Akali Sup',
+            icon: 'a',
+            owner: true,
+        },
+        {
+            id: '6',
+            name: 'Akali Sup',
+            icon: 'a',
+            owner: true,
+        },
+        {
+            id: '7',
+            name: 'Akali Sup',
+            icon: 'a',
+            owner: true,
+        },
+        {
+            id: '8',
+            name: 'Akali Sup',
+            icon: 'a',
+            owner: true,
+        },
     ]
     return (
         <View style={styles.container}>
@@ -31,7 +73,9 @@ const Guilds: React.FC<Props> = ({handleGuildSelected}) => {
                     />
                 )}
                 showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={() => <ListDivider/>}
+                ItemSeparatorComponent={() => <ListDivider isCentered={true} />}
+                ListHeaderComponent={() => <ListDivider isCentered />}
+                contentContainerStyle={{paddingBottom: 68, paddingTop: 40}}
                 style={styles.guilds}
             />
         </View>

@@ -28,25 +28,17 @@ const AppointmentCreate: React.FC = () => {
     const [category, setCategory] = useState('');
     const [openGuildsModal, setOpenGuildsModal] = useState(false);
     const [guild, setGuild] = useState<GuildProps>({} as GuildProps);
-    const members = [
-        {
-            id: '1',
-            username: 'Kitana',
-            avatar_url: "https://github.com/ThyagoFRTS.png",
-            status: "online",
 
-        },
-        {
-            id: '2',
-            username: 'Shiro',
-            avatar_url: "https://github.com/ThyagoFRTS.png",
-            status: "ofline",
-
-        }
-    ]
+    function handleCategorySelected(categoryId: string) {
+        setCategory(categoryId)
+    }
 
     function handleOpenGuildsModal() {
         setOpenGuildsModal(true);
+    }
+
+    function handleCloseGuildsModal() {
+        setOpenGuildsModal(false);
     }
 
     function handleGuildSelected(guildSelected: GuildProps) {
@@ -72,7 +64,7 @@ const AppointmentCreate: React.FC = () => {
 
                 <CategorySelect
                     hasCheckBox
-                    setCategory={setCategory}
+                    setCategory={handleCategorySelected}
                     categorySelected={category}
                 />
                 <View style={styles.form}>
@@ -95,7 +87,7 @@ const AppointmentCreate: React.FC = () => {
                     </TouchableOpacity>
                     <View style={styles.field}>
                         <View>
-                            <Text style={styles.label}>
+                            <Text style={[styles.label, { marginBottom: 12 }]}>
                                 Dia e mês
                             </Text>
                             <View style={styles.column}>
@@ -108,7 +100,7 @@ const AppointmentCreate: React.FC = () => {
                         </View>
 
                         <View>
-                            <Text style={styles.label}>
+                            <Text style={[styles.label, { marginBottom: 12 }]}>
                                 Hora e minuto
                             </Text>
                             <View style={styles.column}>
@@ -144,7 +136,7 @@ const AppointmentCreate: React.FC = () => {
                 </View>
 
             </ScrollView>
-            <ModalView visible={openGuildsModal}>
+            <ModalView visible={openGuildsModal} closeModal={handleCloseGuildsModal} >
                 <Guilds handleGuildSelected={handleGuildSelected} />
             </ModalView>
         </KeyboardAvoidingView>

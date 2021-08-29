@@ -1,15 +1,18 @@
 export const theme = {
     colors: {
-        primary: '#E51C44',
         background: '#000000',
-        background10: '#141414',
-        secondary: '#FEFEFE',
-        
         overlay: 'rgba(0,0,0,0.7)',
+        background10: '#100000',
+        
+        secondary: '#FEFEFE',
+        white: '#FFFFFF',
         heading: '#DDE3F0',
+        highlight: '#ABB1CC',
+        
+        primary: '#E51C44',
         line: '#991F36',
         lineStrong: '#220303',
-        highlight: '#ABB1CC',
+        
         on: '#32BD50',
 
     },

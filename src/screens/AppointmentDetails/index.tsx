@@ -30,8 +30,26 @@ const AppointmentDetails: React.FC = () => {
             id: '2',
             username: 'Shiro',
             avatar_url: "https://github.com/ThyagoFRTS.png",
-            status: "Offiline",
+            status: "online",
 
+        },
+        {
+            id: '3',
+            username: 'Orenji',
+            avatar_url: "https://github.com/ThyagoFRTS.png",
+            status: "ofline",
+        },
+        {
+            id: '4',
+            username: 'Shiro',
+            avatar_url: "https://github.com/ThyagoFRTS.png",
+            status: "ofline",
+        },
+        {
+            id: '5',
+            username: 'Miura',
+            avatar_url: "https://github.com/ThyagoFRTS.png",
+            status: "ofline",
         }
     ]
 
@@ -54,7 +72,7 @@ const AppointmentDetails: React.FC = () => {
                         Lendarios
                     </Text>
                     <Text style={styles.subtitle}>
-                        Olha a akali sup aí, challenger vibes
+                        Olha a akali sup aí, challenger vibes {'\n'} Katarina sup
                     </Text>
                 </View>
             </ImageBackground>

@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: 100,
-        
+        backgroundColor: theme.colors.background10,
     },
     overlay: {
         flex: 1,
@@ -16,8 +16,8 @@ export const styles = StyleSheet.create({
         width:  19,
         height: 2,
         borderRadius: 2,
-        backgroundColor: theme.colors.background,
+        backgroundColor: theme.colors.primary,
         alignSelf: "center",
-        marginTop: 20,
+        
     }
 });

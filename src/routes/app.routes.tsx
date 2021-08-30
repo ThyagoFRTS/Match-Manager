@@ -9,7 +9,7 @@ import { AuthParams } from '../global/types';
 const Stack = createNativeStackNavigator<AuthParams>();
 const { Navigator, Screen } = Stack;
 
-export const AuthRoutes = () => {
+export const AppRoutes = () => {
     return (
         <Navigator
             screenOptions={

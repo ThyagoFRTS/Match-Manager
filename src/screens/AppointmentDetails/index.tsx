@@ -83,7 +83,7 @@ const AppointmentDetails: React.FC = () => {
                 renderItem={({ item }) => (
                     <Member data={item} />
                 )}
-                ItemSeparatorComponent={() => <ListDivider />}
+                ItemSeparatorComponent={() => <ListDivider isCentered />}
                 style={styles.members}
             />
             <View style={styles.footer}>

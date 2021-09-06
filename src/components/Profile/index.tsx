@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useAuthContext } from '../../hooks/auth';
+import { getRandonMessage } from '../../utils/quietMessages';
 import Avatar from '../Avatar';
 import { styles } from './styles';
 
@@ -10,10 +11,12 @@ type Props = {
 
 const Profile = ({openModal}: Props) => {
     const {user, singOut} = useAuthContext();
-
-    function handleSingOut (){
-
-    }
+    const [message, setMessage] = useState('');
+    
+    
+    useEffect(()=>{
+        setMessage(getRandonMessage())
+    },[])
 
     return (
         <View style={styles.container}>
@@ -30,7 +33,7 @@ const Profile = ({openModal}: Props) => {
                         {user.firstName}
                     </Text>
                 </View>
-                <Text style={styles.message}> Today is a beautiful day</Text>
+                <Text style={styles.message}> {message}</Text>
             </View>
         </View>
     );

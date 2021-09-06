@@ -58,26 +58,26 @@ const AppointmentDetails: React.FC<Props> = ({ route, navigation }) => {
     }
 
     function handleShareInvitation() {
-        const message = Platform.OS === 'ios' ?
-            `Entry in ${guildSelected.guild.name}`
-            : `Entry in ${guildSelected.guild.name}`;
-        console.log(widget.instant_invite)
-        const url_share = widget.instant_invite == null ?
-            'discord.com'
-            : 'hello'
-        console.log('===========================')
-        console.log(widget.instant_invite)
-        console.log('invitation up')
-        
-        Share.share({
-            message,
-            url: url_share,
-        });
+        if(widget.instant_invite == null){
+            Alert.alert('Null instant invite', 'Verify your owner permissions')
+        }else{
+
+            const message = Platform.OS === 'ios' ?
+                `Entry in ${guildSelected.guild.name}`
+                : `Entry in ${guildSelected.guild.name}`;
+            Share.share({
+                message,
+                url: widget.instant_invite,
+            });
+        }
+
+
     }
+
 
     function handleOpenGuild() {
         if (widget.instant_invite == null){
-            Alert.alert('Null instant invite')
+            Alert.alert('Null instant invite','Verify your owner permissions')
         }else{
             Linking.openURL(widget.instant_invite);
         }

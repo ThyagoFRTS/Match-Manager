@@ -2,10 +2,10 @@ import { NavigatorScreenParams } from "@react-navigation/core";
 
 export type AuthParams = {
     Home: undefined,
-    AppointmentDetails: undefined,
+    AppointmentDetails: {guildSelected: AppointmentProps},
     AppointmentCreate: undefined,
 }
-
+//
 export type UserProps = {
     id: string;
     username: string;

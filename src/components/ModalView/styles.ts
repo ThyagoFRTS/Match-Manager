@@ -6,6 +6,12 @@ export const styles = StyleSheet.create({
         flex: 1,
         marginTop: 100,
         backgroundColor: theme.colors.background10,
+        
+    },
+    smallContainer: {
+        flex: 1,
+        justifyContent: "flex-end",
+
     },
     overlay: {
         flex: 1,

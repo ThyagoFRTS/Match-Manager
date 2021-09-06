@@ -14,6 +14,7 @@ export const theme = {
         lineStrong: '#220303',
         
         on: '#32BD50',
+        discord: '#7289da',
 
     },
     fonts: {

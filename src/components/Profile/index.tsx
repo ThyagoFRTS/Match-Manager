@@ -1,19 +1,29 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { useAuthContext } from '../../hooks/auth';
 import Avatar from '../Avatar';
 import { styles } from './styles';
 
+type Props = {
+    openModal: () => void;
+}
 
-const Profile = () => {
-    const {user} = useAuthContext();
+const Profile = ({openModal}: Props) => {
+    const {user, singOut} = useAuthContext();
+
+    function handleSingOut (){
+
+    }
+
     return (
         <View style={styles.container}>
-            <Avatar urlImage={user.avatar}/>
+            <TouchableOpacity onPress={openModal}>
+                <Avatar urlImage={user.avatar}/>
+            </TouchableOpacity>
             <View>
                 <View style={styles.user}>
                     <Text style={styles.greeting}>
-                        Olá
+                        Hello
                     </Text>
 
                     <Text style={styles.username}>

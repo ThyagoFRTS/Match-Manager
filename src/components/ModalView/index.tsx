@@ -12,10 +12,11 @@ import { styles } from './styles';
 
 type Props = ModalProps & {
     children: ReactNode;
+    small?: boolean, 
     closeModal: () => void;
 }
 
-const ModalView: React.FC<Props> = ({ children, closeModal, ...rest }) => {
+const ModalView: React.FC<Props> = ({ children, closeModal, small =  false, ...rest }) => {
     return (
         <Modal
             transparent
@@ -24,8 +25,8 @@ const ModalView: React.FC<Props> = ({ children, closeModal, ...rest }) => {
             {...rest}
         >
             <TouchableWithoutFeedback onPress={closeModal}>
-                <View style={styles.overlay}>
-                    <View style={styles.container}>
+                <View style={ styles.overlay}>
+                    <View style={[small ? styles.smallContainer : styles.container]}>
 
                         <View style={styles.bar} />
                         {children}

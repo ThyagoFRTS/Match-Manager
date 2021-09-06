@@ -3,16 +3,16 @@ import { TouchableOpacity, TouchableOpacityProps, View, Text } from 'react-nativ
 import { GuildProps } from '../../global/types';
 import GuildIcon from '../GuildIcon';
 import { styles } from './styles';
-import {Feather} from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons'
 import { theme } from '../../global/styles/theme';
 
 // import { Container } from './styles';
 
 type Props = TouchableOpacityProps & {
-    data : GuildProps;
+    data: GuildProps;
 }
 
-const Guild: React.FC<Props> = ({data, ...rest}) => {
+const Guild: React.FC<Props> = ({ data, ...rest }) => {
     return (
 
         <TouchableOpacity
@@ -20,7 +20,7 @@ const Guild: React.FC<Props> = ({data, ...rest}) => {
             activeOpacity={0.7}
             {...rest}
         >
-            <GuildIcon />
+            <GuildIcon guildId={data.id} iconId={data.icon} />
             <View style={styles.content}>
                 <View>
                     <Text style={styles.title} >{data.name}</Text>

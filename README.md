@@ -1,14 +1,14 @@
 # Match Manager APP
 
-<div>
-  <img src="./images_app/login.jpg" alt="login" width="270" height="600">
-  <img src="./images_app/void_home.jpg" alt="void home" width="270" height="600">
-  <img src="./images_app/home.jpg" alt="home page" width="270" height="600">
+<div align="center">
+  <img src="./images_app/login.jpg" alt="login" width="249" height="552" style="margin: 5px;">
+  <img src="./images_app/void_home.jpg" alt="void home" width="249" height="552" style="margin: 5px;">
+  <img src="./images_app/home.jpg" alt="home page" width="249" height="552" style="margin: 5px;">
 </div>
-<div>
-  <img src="./images_app/filttered.jpg" alt="filtter category types" width="270" height="600">
-  <img src="./images_app/create_appointment.jpg" alt="Create appointiment page" width="270" height="600">
-  <img src="./images_app/details.jpg" alt="details page" width="54" height="600">
+<div align="center">
+  <img src="./images_app/filttered.jpg" alt="filtter category types" width="249" height="552" style="margin: 5px;">
+  <img src="./images_app/create_appointment.jpg" alt="Create appointiment page" width="249" height="552"style="margin: 5px;">
+  <img src="./images_app/details.jpg" alt="details page" width="249" height="552" style="margin: 5px;">
 </div>
 
 <p>This is an application created based in "Next Level Week" event</p>

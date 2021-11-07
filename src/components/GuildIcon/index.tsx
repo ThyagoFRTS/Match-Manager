@@ -17,7 +17,7 @@ const GuildIcon: React.FC<Props> = ({ guildId, iconId }) => {
         <View style = {styles.container}>
 
             {
-                iconId ?
+                iconId != null ?
 
                     <Image
                         source={{ uri }}

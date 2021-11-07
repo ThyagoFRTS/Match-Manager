@@ -10,11 +10,11 @@ import * as AuthSession from 'expo-auth-session';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { COLLECTION_USERS } from "../configs/storage";
 
-const { REDIRECT_URI } = process.env;
-const { SCOPE } = process.env;
-const { RESPONSE_TYPE } = process.env;
-const { CLIENT_ID } = process.env;
-const { CDN_IMAGE } = process.env;
+const { REDIRECT_URI } = process.env
+const { SCOPE } = process.env
+const { RESPONSE_TYPE } = process.env
+const { CLIENT_ID } = process.env
+const { CDN_IMAGE } = process.env
 
 import { api } from "../services/api";
 import { string } from "prop-types";
@@ -48,6 +48,8 @@ function AuthProvider({ children }: AuthContextProps) {
         try {
             setLoading(true);
             const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;            
+            console.log(authUrl);
+            
             const {type, params} = await AuthSession.startAsync({authUrl}) as AuthorizationResponse;
 
             

@@ -1,5 +1,11 @@
 # Match Manager APP
-![Match Manager](https://github.com/ThyagoFRTS/Match-Manager/blob/master/images_app/login.jpg)
+![Match Manager](https://github.com/ThyagoFRTS/Match-Manager/blob/master/images_app/login.jpg =54x120)
+![Match Manager](./images_app/void_home.jpg =54x120)
+![Match Manager](./images_app/home.jpg =54x120)
+![Match Manager](./images_app/filttered.jpg =54x120)
+![Match Manager](./images_app/create_appointment.jpg =54x120)
+![Match Manager](./images_app/details.jpg =54x120)
+
 <p>This is an application created based in "Next Level Week" event</p>
 <p>The application display and create players reunions before to play any game</p>
 <h2>Funcionalitties</h2>
@@ -31,10 +37,12 @@
   <li>Install Node, React Native and Expo</li>
   <li>Download zip or git clone and</li>
   <li>Use packet manager of your preference to install dependencies</li>
+  <li>Create your app on Discord Developers</li>
+  <li>Uncommnet LogBox on ./App.tsx to see your redirect url</li>
   <li>Run 'expo start' on local project</li>
 </ul>
 <h3>Create your Discord</h3>
 <p>Create your discord app to get environment variables, see .env.example file</p>
 <h2>Credits</h2>
 <p>NLW - 6 (https://github.com/rocketseat-education/nlw-06-react-native)</p>
-<p>Gwen's image created by [miyumi] (https://www.zerochan.net/3300990) </p>
+<p>Gwen's image created by <a href="https://www.zerochan.net/3300990">miyumi</a></p>

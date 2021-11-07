@@ -1,15 +1,15 @@
 # Match Manager APP
-![Match Manager](https://github.com/ThyagoFRTS/Match-Manager/blob/master/images_app/login.jpg =54x120)
+![Match Manager](https://github.com/ThyagoFRTS/Match-Manager/blob/master/images_app/login.jpg=54x120)
 
-![Match Manager](./images_app/void_home.jpg =54x120)
+![Match Manager](./images_app/void_home.jpg=54x120)
 
-![Match Manager](./images_app/home.jpg =54x120)
+![Match Manager](./images_app/home.jpg=54x120)
 
-![Match Manager](./images_app/filttered.jpg =54x120)
+![Match Manager](./images_app/filttered.jpg=54x120)
 
-![Match Manager](./images_app/create_appointment.jpg =54x120)
+![Match Manager](./images_app/create_appointment.jpg=54x120)
 
-![Match Manager](./images_app/details.jpg =54x120)
+![Match Manager](./images_app/details.jpg=54x120)
 
 <p>This is an application created based in "Next Level Week" event</p>
 <p>The application display and create players reunions before to play any game</p>

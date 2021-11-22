@@ -49,5 +49,5 @@
 <h3>Create your Discord</h3>
 <p>Create your discord app to get environment variables, see .env.example file</p>
 <h2>Credits</h2>
-<p>NLW - 6 (https://github.com/rocketseat-education/nlw-06-react-native)</p>
+<p><a href="https://github.com/rocketseat-education/nlw-06-react-native">NLW - 6</a></p>
 <p>Gwen's image created by <a href="https://www.zerochan.net/3300990">miyumi</a></p>
